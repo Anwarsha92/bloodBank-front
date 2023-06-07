@@ -1,0 +1,188 @@
+#home {
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(92, 91, 91, 0.5)), url('https://i.postimg.cc/y6SmCKQz/1620406022-blood-donation.jpg'); */
+  /* background-image: url("https://cdn2.hubspot.net/hubfs/2027031/Lanermc_January2018/Images/D53297C6-155D-D235-07048C3BAF7898A0.jpeg"); */
+  /* background-image: url("https://health.osu.edu//-/media/health/images/stories/2021/06/woman-donating-blood.jpg"); */
+
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  box-shadow: inset 0px 150px 100px 0px #ffffff; */
+  /* position: relative; */
+  padding-bottom: 10px;
+  padding-top: 30px;
+}
+
+.searchblood {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+gap: 5px;}
+
+
+
+#box1 {
+  /* background-color: rgba(104, 147, 226, 0.201); */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* padding-top: 50px; */
+}
+
+.search{
+  display: flex;
+  flex-direction: column;
+}
+
+.form2 {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* input {
+  text-align: left;
+} */
+
+label {
+  /* width: 30%; */
+  font-weight: 2px;
+  margin-right: 3px;
+  font-size: medium;
+  color: rgb(0, 0, 0);
+  
+  /* font-weight: bold; */
+  /* color: rgb(0, 0, 0); */
+}
+
+/* .redisterinp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
+/* } */
+
+.select{
+  border-color: #0033ff !important;
+}
+
+.imageb {
+  max-width: 650px;
+  /* filter: blur(1px); */
+  /* box-shadow: inset 0px 1px 10px 1px #000000; */
+  margin-bottom: 20px;
+
+}
+/* ul{
+  list-style: url("https://i.postimg.cc/d3tF21td/blood.png");
+  background-size: 10px;
+
+} */
+
+li{
+  color: rgba(0, 0, 0, 0.488);
+  font-size: larger;
+  margin-top: 20px;
+  list-style: none;
+  padding: 1px 30px;
+  background-image: url(
+"https://i.postimg.cc/d3tF21td/blood.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 15px; 
+}
+
+.article {
+  text-decoration: none;
+}
+
+@media(max-width:990px) {
+  #box1 {
+    justify-content: center;
+  }
+}
+
+@media(max-width:600px) {
+  li{
+    font-size: small;
+    line-height: normal;
+    margin-top: 10px;
+  }
+  .imageb {
+    width: 300px;
+  }
+}
+
+.inputs {
+  font-size: medium;
+  font-weight: lighter;
+  color: red;
+  display: none;
+}
+
+input:invalid[focus = 'true'] ~.inputs {
+  display: inline-block;
+}
+
+.form-control:focus{
+  border-color: #ff0000 !important;
+  box-shadow:none !important;
+}
+.form-control{
+  border-color: lightgrey !important;
+  width: 50px;
+}
+
+
+
+.zoom-in-zoom-out {
+  animation: zoom-in-zoom-out 2s ease-out infinite;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+
+
+/* CSS */
+.button-62 {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}

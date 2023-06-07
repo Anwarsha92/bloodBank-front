@@ -1,0 +1,45 @@
+
+#accord{
+    max-width: 550px;
+    margin-top: 10px;
+
+}
+#donor h6{
+  color: black;
+}
+
+#donor{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+}
+
+.accordion-button.collapsed::after {
+    background-image: url("https://i.postimg.cc/RZJv3kyV/icons8-user-150.png");
+  }
+
+/* .accordion-button {
+    background-color: rgb(162, 22, 22);
+  } */
+
+  .accordion-item {
+    --bs-accordion-border-color:rgb(255, 0, 0);
+    --bs-accordion-border-width:3px;
+
+  }
+
+  .accordion-button:focus {
+    box-shadow: red;
+    /* border-color: rgba(28, 24, 75, 0.125); */
+}
+span{
+  font-weight: bold;
+}
+
+.imagec {
+  width: 250px;
+}
+
+.edit:active{
+transform: scale(.9);
+}
