@@ -1,16 +1,8 @@
 #home {
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(92, 91, 91, 0.5)), url('https://i.postimg.cc/y6SmCKQz/1620406022-blood-donation.jpg'); */
-  /* background-image: url("https://cdn2.hubspot.net/hubfs/2027031/Lanermc_January2018/Images/D53297C6-155D-D235-07048C3BAF7898A0.jpeg"); */
-  /* background-image: url("https://health.osu.edu//-/media/health/images/stories/2021/06/woman-donating-blood.jpg"); */
-
-  /* background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  box-shadow: inset 0px 150px 100px 0px #ffffff; */
-  /* position: relative; */
   padding-bottom: 10px;
   padding-top: 30px;
 }
+
 
 .searchblood {
   display: flex;
@@ -22,12 +14,10 @@ gap: 5px;}
 
 
 #box1 {
-  /* background-color: rgba(104, 147, 226, 0.201); */
   padding: 10px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* padding-top: 50px; */
 }
 
 .search{
@@ -42,28 +32,16 @@ gap: 5px;}
   gap: 5px;
 }
 
-/* input {
-  text-align: left;
-} */
+
 
 label {
-  /* width: 30%; */
   font-weight: 2px;
   margin-right: 3px;
   font-size: medium;
   color: rgb(0, 0, 0);
-  
-  /* font-weight: bold; */
-  /* color: rgb(0, 0, 0); */
 }
 
-/* .redisterinp {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
-  /* align-items: center; */
-  /* flex-wrap: wrap; */
-/* } */
+
 
 .select{
   border-color: #0033ff !important;
@@ -71,16 +49,9 @@ label {
 
 .imageb {
   max-width: 650px;
-  /* filter: blur(1px); */
-  /* box-shadow: inset 0px 1px 10px 1px #000000; */
   margin-bottom: 20px;
 
 }
-/* ul{
-  list-style: url("https://i.postimg.cc/d3tF21td/blood.png");
-  background-size: 10px;
-
-} */
 
 li{
   color: rgba(0, 0, 0, 0.488);
@@ -99,7 +70,7 @@ li{
   text-decoration: none;
 }
 
-@media(max-width:990px) {
+@media(max-width:1269px) {
   #box1 {
     justify-content: center;
   }
@@ -158,7 +129,7 @@ input:invalid[focus = 'true'] ~.inputs {
 
 /* CSS */
 .button-62 {
-  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  background: linear-gradient(to bottom right, #ff002f, #000000);
   border: 0;
   border-radius: 12px;
   color: #FFFFFF;

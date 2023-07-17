@@ -5,6 +5,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import './Donor.css'
 import Header from './Header';
 import Footer from './Footer';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -15,6 +16,10 @@ function Donor() {
 
   const [donor, setDonor] = useState([])
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+
   const params = useParams()
   console.log(params.id);
 
@@ -24,24 +29,22 @@ function Donor() {
 
   }
 
-  console.log(donor);
+  
 
-  const logOut=(e)=>{
-    // e.preventDefault()
-    localStorage.removeItem("username")  
-    location("/")
+  const confirmation=()=>{
+    setShow(true)
 
   }
 
-
   const deleteProfile=async()=>{
+    setShow(false)
 
     try{
 
       const result=await axios.delete('http://localhost:8081/deleteProfile/'+ params.id)
-    alert(result.data.message)
-    // fetchDonor()
-    location("/")
+      setTimeout(() => {
+        alert(result.data.message);location("/")
+      }, 200);
     }
     catch(error){
       alert(error.response.data.message)
@@ -64,23 +67,43 @@ function Donor() {
   }, [])
 
   return (
-    <div>
+    <div className=''>
             <Header></Header>
 
       <div className='container d-flex justify-content-between mt-3'>
-        {/* <div></div> */}
         <div><h6 className='text-center'>Welcome  <span style={{ fontWeight: 'bolder',fontSize:'larger',color:'red' }}> { donor.name}</span></h6></div>
-        <div>
-          <button onClick={(e) => logOut(e)} className='edit btn btn-danger button-62'>Logout</button>
-        </div>
+        {/* <div>
+          <button onClick={(e) => logOut(e)} className='edit button-62'>Logout</button>
+        </div> */}
       </div>
       <div className='container mb-3' id='accord'>
 
+
+      <Modal style={{marginTop:'150px'}} show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title className='text-danger'>Alert !!!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure want to delete?</Modal.Body>
+        <Modal.Footer>
+          <button variant="secondary" onClick={handleClose} style={{color:'white',backgroundColor:'green',border:'none',fontWeight:'bolder'}}>
+            No
+          </button>
+          <button onClick={() => deleteProfile(params.id)} style={{color:'white',backgroundColor:'red',border:'none',fontWeight:'bolder'}}>
+            Yes
+          </button>
+        </Modal.Footer>
+      </Modal>
+
+
+        
+
         <Accordion  >
           <Accordion.Item  eventKey="0">
-            <Accordion.Header >My Profile</Accordion.Header>
-            <Accordion.Body >
-              <div className='d-flex justify-content-end'><button onClick={()=>deleteProfile(params.id)} className='btn btn-primary'>Delete Profile</button></div>
+            <Accordion.Header><span className='text-danger'>My Profile</span></Accordion.Header>
+            <Accordion.Body className='' >
+              <div className='d-flex justify-content-end'>
+              <Link to={`/edit/${donor.username}`}><button className='edit fs-3'  style={{color:'green',backgroundColor:'unset',border:'none'}}><i class="las la-user-edit"></i></button></Link>
+                <button onClick={()=>confirmation()} className='edit fs-3'  style={{color:'red',backgroundColor:'unset',border:'none',fontWeight:'bolder'}}><i class="las la-user-times"></i></button></div>
               <div id='donor'>
                 <div >
                   <h6>Name : <span>{donor.name}</span></h6>
@@ -99,12 +122,11 @@ function Donor() {
               </div>
 
               <div className='text-center'>
-                <Link to={`/edit/${donor.username}`}><button className='edit btn btn-danger button-62'>Edit Profile</button></Link>
+                
               </div>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        {/* <div className='d-flex justify-content-center'><img style={{}} className='imagec' src="https://www.sankalpindia.net/sites/default/files/images/donate_blood_lg_clr.gif" alt="" /></div> */}
 
       </div>
 

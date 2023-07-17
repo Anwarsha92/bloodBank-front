@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import './Search.css'
 import Header from './Header'
 import Footer from './Footer'
@@ -11,6 +11,7 @@ function Search() {
   const [donorsList, setDonorsList] = useState([])
 
   const params = useParams()
+  let location=useNavigate()
 
   const params1=params.id
   const params2=params.name
@@ -61,16 +62,20 @@ function Search() {
               <tr style={{borderBottom:'1px red solid'}}>
                 <td>{index+1}</td>
                 <td>{list.name}</td>
-                <td>{list.blood}</td>
+                <td className='text-primary'>{list.blood}</td>
                 <td>{list.place}</td>
                 <td>{list.district}</td>
-                <td>{list.mobile}</td>
+                <td className='text-info fs-5'>{list.mobile}</td>
               </tr>
 
             ))):""}
 
           </tbody>
         </table>
+        <div className='text-center'>
+        <button onClick={() => location('/')} className='edit fs-5'  style={{color:'blue',backgroundColor:'unset',border:'none'}}><i class="las la-angle-double-left"></i>Back to Home</button>
+
+        </div>
       </div>
       <Footer></Footer>
 

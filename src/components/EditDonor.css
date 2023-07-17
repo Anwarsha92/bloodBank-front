@@ -15,7 +15,12 @@
   }
   .table1 td{
     text-align: left;
+  
   }
+  .edtails{
+padding-left: 20px;  
+  }
+ 
   tr{
     height: 50px;
   }

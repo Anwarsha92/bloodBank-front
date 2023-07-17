@@ -23,7 +23,7 @@ function Guideline() {
 
             <Modal className='modal' show={show} onHide={handleClose}>
                 <Modal.Header className='text-center' closeButton>
-                    <h2 className='text-danger text-center'><strong>Guideline To Donors</strong></h2>
+                    <h2 className='text-primary text-center'><strong>Guideline To Donors</strong></h2>
                 </Modal.Header>
                 <Modal.Body>
                     <ul>

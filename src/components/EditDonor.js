@@ -128,7 +128,7 @@ function EditDonor() {
         },
         {
             value: 1,
-            label: "Patahanamthitta"
+            label: "Pathanamthitta"
         },
         {
             value: 1,
@@ -288,8 +288,8 @@ function EditDonor() {
                     <table className='table1'>
                         <tbody>
                             <tr>
-                                <td>Name</td>
-                                <td>
+                                <td><strong>Name</strong></td>
+                                <td className='edtails'>
                                     <input
                                         type="text"
                                         value={name}
@@ -302,8 +302,8 @@ function EditDonor() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>Gender</td>
-                                <td>
+                                <td><strong>Gender</strong></td>
+                                <td className='edtails'>
                                     <Select
                                         styles={customStyles}
                                         type="text"
@@ -315,33 +315,10 @@ function EditDonor() {
                                     />
                                 </td>
                             </tr>
-                            {/* <tr>
-                                <td>Date of Birth</td>
-                                <td>
-                                    <input 
-                                    type='date'
-                                    value={dob}
-                                    onChange={(e) => setDob(e.target.value)}
-                                    pattern="^[A-Za-z].{5,}"
-                                    />
-                                </td>
-                            </tr>
+                           
                             <tr>
-                                <td>Blood Group</td>
-                                <td>
-                                    <Select 
-                                    options={bloodGroupList}
-                                    styles={customStyles}
-                                    type="text"
-                                    value={blood}
-                                    onChange={(e) => setBlood(e.target.value)}
-                                    pattern="^[A-Za-z].{5,}"
-                                    />
-                                </td>
-                            </tr> */}
-                            <tr>
-                                <td>District</td>
-                                <td>
+                                <td><strong>District</strong></td>
+                                <td className='edtails'>
                                     <Select
                                         styles={customStyles}
                                         type="text"
@@ -354,8 +331,8 @@ function EditDonor() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>Place</td>
-                                <td>
+                                <td><strong>Place</strong></td>
+                                <td className='edtails'>
                                     <input
                                         type="text"
                                         value={place}
@@ -369,8 +346,8 @@ function EditDonor() {
                             </tr>
 
                             <tr>
-                                <td>Email</td>
-                                <td>
+                                <td><strong>Email</strong></td>
+                                <td className='edtails'>
                                     <input
                                         type="email"
                                         value={email}
@@ -382,8 +359,8 @@ function EditDonor() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>Mobile</td>
-                                <td>
+                                <td><strong>Mobile</strong></td>
+                                <td className='edtails'>
                                     <input
                                         type="text"
                                         value={mobile}
@@ -395,8 +372,8 @@ function EditDonor() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>Last Donated On</td>
-                                <td>
+                                <td><strong>Last Donated On</strong></td>
+                                <td className='edtails'>
                                     <input
                                         type="date"
                                         max={date}
@@ -409,132 +386,16 @@ function EditDonor() {
                         </tbody>
                     </table>
                     <div className='text-center'>
-                    <button onClick={() => location(-1)} className='edit button-62'>Back</button>
+                    <button onClick={() => location(-1)} className='edit fs-5'  style={{color:'blue',backgroundColor:'unset',border:'none'}}><i class="las la-angle-double-left"></i><strong>Back</strong></button>
 
-                        <button className='edit button-63 ms-2'>Update</button>
+                        <button className='edit fs-5'  style={{color:'green',backgroundColor:'unset',border:'none'}}><i class="las la-check"></i><strong>Update</strong></button>
                     </div>
                 </form>
 
             </div>
 
 
-            {/* <div className='container d-flex justify-content-center'>
-                <form className='form2 pb-3 mt-3 mb-3' action="">
-                    <h2 className='text-center'><strong></strong></h2>
-                    <div className='redisterinp'>
-                        <label htmlFor="">Name</label>
-                        <div className='input'>
-                            <input
-                                className='form-control'
-                                style={{ height: '35px', width: '100%' }}
-                                type="text"
-                                required
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                pattern="^[A-Za-z].{5,}"
-                            />
-                            <span className='inputs '>Name must have minimum 6 charactors</span>
-    
-    
-    
-                        </div>
-                    </div>
-
-                    <div className='redisterinp'>
-                        <label htmlFor="">Gender</label>
-
-
-                        <div className='input'>
-                            <Select
-                                styles={customStyles}
-                                className='w-100'
-                                options={genderList}
-                                required
-                                defaultValue={gender}
-                                onChange={(e)=>setGender(e.target.value)}
-                            >
-    
-                            </Select>
-                        </div>
-
-                    </div>
-
-                    <div className='redisterinp'>
-                        <label htmlFor="">Date of Birth</label>
-                        <input 
-                        className='form-control' 
-                        style={{ height: '35px', width: '100%', fontSize: 'small', fontWeight: 'lighter' }} 
-                        type='date' required
-                        defaultValue={dob}
-                        onChange={(e)=>setDob(e.target.value)}
-                        />
-                    </div>
-
-                    <div className='redisterinp'>
-                        <label htmlFor="">Blood Group</label>
-                        <Select styles={customStyles} className='w-100' options={bloodGroupList} required></Select>
-
-                    </div>
-
-                    <div className='redisterinp'>
-                        <label htmlFor="">District</label>
-
-
-                        <Select styles={customStyles} className='w-100' options={districtList} required></Select>
-
-                    </div>
-
-                    <div className='redisterinp'>
-                        <label htmlFor="">Place</label>
-                        <input
-                            className='form-control'
-                            style={{ height: '35px', width: '100%' }}
-                            type='text'
-                            pattern='^[A-Za-z].{4,}'
-                            required
-                        />
-                        <span className='inputs '>Place must have minimum 5 charactors</span>
-
-
-                    </div>
-
-                    <div className='redisterinp'>
-                        <label htmlFor="">Email</label>
-                        <input
-                            className='form-control'
-                            style={{ height: '35px', width: '100%' }}
-                            type='email'
-                            required
-                        />
-                        <span className='inputs '>Enter valid email</span>
-
-
-                    </div>
-
-
-                    <div className='redisterinp'>
-                        <label htmlFor="">Mobile</label>
-                        <input
-                            className='form-control'
-                            style={{ height: '35px', width: '100%' }}
-                            type='text'
-                            required
-                            pattern="^[0-9].{9,9}"
-                        />
-
-                        <span className='inputs'>Enter 10 digit mobile number</span>
-
-                    </div>
-
-
-                    <div className='redisterinp text-center'>
-                        <div className=''>
-                            <button className='btn btn-primary '>Update</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div> */}
+           
             <Footer></Footer>
 
 

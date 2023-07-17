@@ -15,7 +15,7 @@ function About() {
             <div className='text-center container mt-5 w-50'>
                 <h2 className='text-success'><u>KL 29 Care & Charity</u></h2>
                 <div>
-                    <p>KL 29 Care & Charity formed on 2023 on the basis of a project. As we all know by now, blood donation has a lot of benefits. Why a person requires blood has various reasons. It may be an illness or also an accident, nonetheless, it is important. The blood that we donate helps a person in need. It enhances their health condition and makes them overcome their critical situation.
+                    <p>KL 29 Care & Charity is formed on 2023 on the basis of a project and it belongs to kerala. As we all know by now, blood donation has a lot of benefits. Why a person requires blood has various reasons. It may be an illness or also an accident, nonetheless, it is important. The blood that we donate helps a person in need. It enhances their health condition and makes them overcome their critical situation.
 
                         In other words, blood donation does not simply help that specific person but also contributes to a responsible gesture towards society. Moreover, it also enhances the health of the donor. As the cell depletion allows a way for production, not new cells that freshen our body system.
 

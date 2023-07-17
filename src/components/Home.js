@@ -1,31 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 import Header from './Header';
 import Footer from './Footer';
 
-// import DatePicker from 'react-datepicker'
-// import 'react-datepicker/dist/react-datepicker.css';
 
 
 
 function Home() {
 
 
-    //date picker
-
-
-
-    // const [startDate, setStartDate] = useState(new Date());
-
-
-    //date picker
-
-
-
-    //select border
+    
 
     const customStyles = {
         control: (base, state) => ({
@@ -51,14 +38,11 @@ function Home() {
 
 
     // Login
-    const [linputs, setLinputs] = useState({
-        username: '',
-        password: ''
-
-    })
+   
 
     // Login
 
+        // set focus
 
     const [focus, setFocus] = useState({
         errUsername: false,
@@ -78,31 +62,28 @@ function Home() {
 
     // Login appi
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        // console.log(linputs);
-        // console.log(linputs.mobile);
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault()
 
-        const body = {
-            username: linputs.username,
-            psw: linputs.password
-        }
+    //     const body = {
+    //         username: linputs.username,
+    //         psw: linputs.password
+    //     }
 
 
-        try {
-            const result = await axios.post('http://localhost:8081/logIn', body)
-            alert(result.data.message)
-            localStorage.setItem("username", result.data.username)
-            // console.log(localStorage.getItem("mobilenum"));
-            location(`donor/${result.data.username}`)
-        }
-        catch (error) {
-            alert(error.response.data.message);
-            window.location.reload(true)
+    //     try {
+    //         const result = await axios.post('http://localhost:8081/logIn', body)
+    //         alert(result.data.message)
+    //         localStorage.setItem("username", result.data.username)
+    //         location(`donor/${result.data.username}`)
+    //     }
+    //     catch (error) {
+    //         alert(error.response.data.message);
+    //         window.location.reload(true)
 
-        }
+    //     }
 
-    }
+    // }
 
 
     // Login appi
@@ -112,11 +93,11 @@ function Home() {
 
     // Login handlechange
 
-    const handleChange = (e) => {
-        const name = e.target.name
-        const value = e.target.value
-        setLinputs({ ...linputs, [name]: value })
-    }
+    // const handleChange = (e) => {
+    //     const name = e.target.name
+    //     const value = e.target.value
+    //     setLinputs({ ...linputs, [name]: value })
+    // }
 
     // Login handlechange
 
@@ -125,7 +106,6 @@ function Home() {
 
     const [name, setName] = useState('')
 
-    // const [selects, setGender] = useState('')
 
     var genderList = [
         {
@@ -227,7 +207,7 @@ function Home() {
         },
         {
             value: 1,
-            label: "Patahanamthitta"
+            label: "Pathanamthitta"
         },
         {
             value: 1,
@@ -333,19 +313,6 @@ function Home() {
             alert(error.response.data.message);
         }
 
-
-
-        // console.log(name);
-        // console.log(gender);
-        // console.log(dob);
-        // console.log(blood);
-        // console.log(email);
-        // console.log(mobile);
-        // console.log(psw);
-        // console.log(conpsw);
-
-
-
     }
     // Register Api
 
@@ -435,7 +402,7 @@ function Home() {
         },
         {
             value: 1,
-            label: "Patahanamthitta"
+            label: "Pathanamthitta"
         },
         {
             value: 1,
@@ -500,6 +467,7 @@ function Home() {
     }
 
     // Search API
+    
 
     useEffect(() => {
         localStorage.removeItem("username")
@@ -507,7 +475,7 @@ function Home() {
 
 
     return (
-        <div>
+        <div className='background'>
 
             <Header></Header>
 
@@ -520,9 +488,9 @@ function Home() {
 
                     {/* SEARCH DONOR */}
 
-                    <div className='search text-center'>
+                    <div className='search text-center '>
 
-                        <div ><h4 ><strong>Search <span className='text-danger'>Blood</span> Donors</strong></h4></div>
+                        <div ><h4 ><strong>Search <span className='text-primary'>Blood</span> Donors</strong></h4></div>
                         <div>
                             <form
                                 onSubmit={(e) => searchDonor(e)}
@@ -544,7 +512,7 @@ function Home() {
     
                                     <div>
                                         {/* <Link to={`search/${bloodSearch}/${districtSearch}`}> */}
-                                        <button style={{ width: '100px' }} className='edit btn btn-danger button-62'>Search</button>
+                                        <button style={{ width: '100px' }} className='edit button-62'>Search</button>
                                         {/* </Link> */}
                                     </div>
                                 </div>
@@ -554,79 +522,26 @@ function Home() {
                         </div>
                         
                         <div className='d-flex justify-content-center'><img style={{}} className='imageb mt-2' src="https://media.defense.gov/2019/Nov/25/2002216604/1920/1080/0/191206-F-PO640-013.JPG" alt="" /></div>
+                        <div><p className='fs-2'><span className='text-warning fs-1'>" </span> Never get tired of doing little things for others. <br /> Sometimes those little things occupy the biggest part of their heart <span className='text-warning fs-1'> " </span></p></div>
 
-                        {/* <div className='mt-5'>
-                                <ul>
-                                    <li>Be the reason for someone’s heartbeat.</li>
-                                    <li>Donate <span style={{color:'red'}}>blood</span>. Not on roads but in <span style={{color:'red'}}>blood</span> donation camps.</li>
-                                    <li>A single drop of <span style={{color:'red'}}>blood</span> can make a huge difference.</li>
-                                    <li>Stay fit and eat right and donate <span style={{color:'red'}}>blood</span>.</li>
-                                    <li>The gift of <span style={{color:'red'}}>blood</span> is a gift to someone’s life.</li>
-                                    <li>Donate <span style={{color:'red'}}>blood</span> and be the reason for someone’s existence.</li>
-                                    <li>You can become a superhero too. Just donate a bag of <span style={{color:'red'}}>blood</span>.</li>
-                                </ul>
-                            </div> */}
-
+                  
                     </div>
 
 
 
-                    {/* LOGIN DONOR */}
+                    
 
 
                     <div>
 
-                        <div>
-                            <form onSubmit={(e) => handleSubmit(e)} className="form2">
+                        {/* LOGIN DONOR */}
 
-                                <div>
-                                    <input
-                                        className='form-control'
-                                        type="text"
-                                        id='userid'
-                                        autoComplete='off'
-                                        name='username'
-                                        placeholder='Username'
-                                        value={linputs.username}
-                                        onChange={handleChange}
-                                        onBlur={() => setFocus({ ...focus, errUsername: true })}
-                                        focus={focus.errUsername.toString()}
-                                        required
-                                        pattern="^[A-Za-z0-9].{5,}"
-                                    />
-                                    <span className='inputs'>Username must have minimum 6 charactors</span>
-                                </div>
-                                <div>
-                                    <input
-                                        className='form-control'
-                                        type="password"
-                                        id='passwordid'
-                                        name='password'
-                                        placeholder='Password'
-                                        value={linputs.password}
-                                        onChange={handleChange}
-                                        onBlur={() => setFocus({ ...focus, errPassword: true })}
-                                        focus={focus.errPassword.toString()}
-                                        required
-                                        pattern="^[A-Za-z0-9].{5,}"
-
-                                    />
-                                    <span className='inputs'>Password must have minimum 6 charactors</span>
-                                </div>
-                                <div className='text-center'>
-                                    <button style={{ width: '100px' }} className='edit btn btn-danger button-62'>Login</button>
-                                    {/* <p><a style={{ color: 'white' }} href="">Forgot password?</a></p> */}
-                                </div>
-                            </form>
-                        </div>
-
-
-
+                        {/* LOGIN DONOR */}
 
                         {/* REGISTER DONOR */}
 
                         <form onSubmit={(e) => registerDonor(e)} className='form2 mt-5' action="">
-                            <h3 className='text-center text-primary zoom-in-zoom-out '><strong><u>Register as a <span className='text-danger'>Donor</span></u></strong></h3>
+                            <h3 className='text-center zoom-in-zoom-out '><strong>Register as a <span className='text-primary'>Donor</span></strong></h3>
                             <div className='redisterinp'>
                                 <label htmlFor="">Name</label>
                                 <input
@@ -650,27 +565,19 @@ function Home() {
 
 
                                 <Select onChange={(e) => setGender(e.label)} styles={customStyles} className='w-100' options={genderList} required></Select>
-                                {/* <select onChange={(e) => setGender(e.target.value)} value={selects} className='form-control' style={{ height: '35px', width: '100%' }} name="" id="">
-                                    <option value="">-select gender-</option>
-                                    <option value="">Male</option>
-                                    <option value="">Female</option>
-                                    <option value="">Other</option>
-                                </select> */}
+                               
                             </div>
 
                             <div className=''>
                                 <label htmlFor="">Date of Birth</label>
 
-                                {/* <DatePicker 
-                                 selected={startDate}  onChange={(date) => setStartDate(date)} 
-                                /> */}
 
                                 <input
                                     type='date'
                                     max={"2005-12-31"}
+                                    min={"1963-01-01"}
                                     onChange={(e) => setDob(e.target.value)}
                                     className='form-control'
-                                    // style={{ height: '35px', width: '100%', fontSize: 'small', fontWeight: 'lighter' }}
                                     required
                                 />
                             </div>
@@ -791,8 +698,7 @@ function Home() {
 
                             </div>
                             <div className='text-center'>
-                                <button className='edit btn btn-danger button-62'>Register</button>
-                                {/* <a href='/' className='btn btn-danger '>Reset</a> */}
+                                <button className='edit button-62'>Register</button>
                             </div>
 
                         </form>

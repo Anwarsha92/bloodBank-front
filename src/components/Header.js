@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -11,6 +12,96 @@ import Guideline from './Guideline';
 
 function Header() {
 
+  const [showContent, setShowContent] = useState(true);
+
+
+
+  let location = useNavigate()
+
+
+  // Login
+  const [linputs, setLinputs] = useState({
+    username: '',
+    password: ''
+
+  })
+
+  // Login
+
+
+  const [focus, setFocus] = useState({
+    errUsername: false,
+    errPassword: false,
+    errName: false,
+    errPlace: false,
+    errEmail: false,
+    errMobilere: false,
+    errUsernamere: false,
+    errPasswordre: false,
+    errConPsw: false,
+
+  })
+
+
+  // Login appi
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const body = {
+      username: linputs.username,
+      psw: linputs.password
+    }
+
+
+    try {
+      const result = await axios.post('http://localhost:8081/logIn', body)
+      alert(result.data.message)
+      localStorage.setItem("username", result.data.username)
+      location(`donor/${result.data.username}`)
+    }
+    catch (error) {
+      alert(error.response.data.message);
+      window.location.reload(true)
+
+    }
+
+  }
+
+
+  // Login appi
+
+
+
+  // Login handlechange
+
+  const handleChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    setLinputs({ ...linputs, [name]: value })
+  }
+
+  // Login handlechange
+
+  const logOut=(e)=>{
+    // e.preventDefault()
+    localStorage.removeItem("username")  
+    location("/")
+
+  }
+
+  // logout
+
+
+  //logout
+
+  useEffect(() => {
+
+    if (localStorage.getItem('username')) {
+
+      setShowContent(false);
+    }
+  }, []);
 
 
   return (
@@ -29,10 +120,6 @@ function Header() {
               <span style={{ fontSize: '30px', color: 'red' }}><strong>Donate Blood - SAVE A LIFE - Become A HERO&nbsp;</strong></span>
             </p>
 
-
-            {/* <p class="marquee marquee2">
-                <span>This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text -&nbsp;</span>
-              </p> */}
           </div>
         </div>
 
@@ -56,7 +143,54 @@ function Header() {
 
 
               </Nav>
+              {showContent ?(
+                <div >
 
+                  <form onSubmit={(e) => handleSubmit(e)} >
+                    <div className='loginheader'>
+
+                      <div>
+                        <input
+                          className='form-control'
+                          type="text"
+                          id='userid'
+                          autoComplete='off'
+                          name='username'
+                          placeholder='Username'
+                          value={linputs.username}
+                          onChange={handleChange}
+                          onBlur={() => setFocus({ ...focus, errUsername: true })}
+                          focus={focus.errUsername.toString()}
+                          required
+                          pattern="^[A-Za-z0-9].{5,}"
+                        />
+                        <span className='loginputs'>Username must have minimum 6 charactors</span>
+                      </div>
+                      <div>
+                        <input
+                          className='form-control'
+                          type="password"
+                          id='passwordid'
+                          name='password'
+                          placeholder='Password'
+                          value={linputs.password}
+                          onChange={handleChange}
+                          onBlur={() => setFocus({ ...focus, errPassword: true })}
+                          focus={focus.errPassword.toString()}
+                          required
+                          pattern="^[A-Za-z0-9].{5,}"
+
+                        />
+                        <span className='loginputs'>Password must have minimum 6 charactors</span>
+                      </div>
+                      <div className='text-center'>
+                        <button style={{ width: '100px' }} className='edit button-62'>Login</button>
+                        {/* <a style={{ color: 'black',fontSize:'x-small' }} href="admin">Login as admin</a> */}
+                      </div>
+                    </div>
+                  </form>
+
+                </div>):<button onClick={(e) => logOut(e)} className='edit button-62'>Logout</button>}
             </Navbar.Collapse>
           </Container>
         </Navbar>

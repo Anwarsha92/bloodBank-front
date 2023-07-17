@@ -1,0 +1,17 @@
+.adinputs{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 15px;
+}
+
+.errinputs {
+    font-size: medium;
+    font-weight: lighter;
+    color: red;
+    display: none;
+  }
+
+  input:invalid[focus = 'true'] ~.errinputs {
+    display: inline-block;
+  }

@@ -1,0 +1,12 @@
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+}
+
+.details{
+    padding: 10px;
+    border-radius: 15px;
+}
