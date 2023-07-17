@@ -26,11 +26,11 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='donor/:id' element={<Donor />}></Route>
+        <Route path='/donor/:id' element={<Donor />}></Route>
         <Route path='search/:id/:name' element={<Search />}></Route>
         <Route path='edit/:id' element={<EditDonor />}></Route>
-        <Route path='about' element={<About />}></Route>
-        <Route path='activities' element={<Activities />}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/activities' element={<Activities />}></Route>
         <Route path='guideline' element={<Guideline />}></Route>
         <Route path='admin' element={<Admin />}></Route>
         <Route path='adminDash' element={<AdminDashboard />}></Route>

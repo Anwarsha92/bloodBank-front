@@ -36,8 +36,8 @@ function Header() {
 
   // Login appi
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async () => {
+    // e.preventDefault()
 
     const body = {
       username: linputs.username,
@@ -49,7 +49,7 @@ function Header() {
       const result = await axios.post('http://localhost:8081/logIn', body)
       alert(result.data.message)
       localStorage.setItem("username", result.data.username)
-      location(`donor/${result.data.username}`)
+      location(`/donor/${result.data.username}`)
     }
     catch (error) {
       alert(error.response.data.message);
@@ -126,18 +126,22 @@ function Header() {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-                <Nav.Link className='text-white navbar-brand' href="/about">ABOUT</Nav.Link>
+                <Nav.Link  className='text-white navbar-brand' href="/about">ABOUT</Nav.Link>
                 <Nav.Link className='text-white navbar-brand' href="/activities">ACTIVITIES</Nav.Link>
                 {/* <Nav.Link className='text-white navbar-brand' href="#action2">COMMUNITY</Nav.Link> */}
                 <Nav.Link className='text-white navbar-brand' ><Guideline>GUIDELINE</Guideline></Nav.Link>
-
+              {
+                !showContent &&(
+                  <Nav.Link className='text-light navbar-brand' href={`/donor/${localStorage.getItem('username')}`}><strong>My Profile</strong></Nav.Link>
+                )
+              }
 
 
               </Nav>
               {showContent ?(
                 <div >
 
-                  <form onSubmit={(e) => handleSubmit(e)} >
+                  {/* <form onSubmit={(e) => handleSubmit(e)} > */}
                     <div className='loginheader'>
 
                       <div>
@@ -175,11 +179,11 @@ function Header() {
                         <span className='loginputs'>Password must have minimum 6 charactors</span>
                       </div>
                       <div className='text-center'>
-                        <button style={{ width: '100px' }} className='edit button-62'>Login</button>
+                        <button onClick={()=>(handleSubmit())} style={{ width: '100px' }} className='edit button-62'>Login</button>
                         {/* <a style={{ color: 'black',fontSize:'x-small' }} href="admin">Login as admin</a> */}
                       </div>
                     </div>
-                  </form>
+                  {/* </form> */}
 
                 </div>):<button onClick={(e) => logOut(e)} className='edit button-62'>Logout</button>}
             </Navbar.Collapse>

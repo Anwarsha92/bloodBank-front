@@ -6,9 +6,7 @@ import './Activities.css'
 
 function Activities() {
 
-  useEffect(() => {
-    localStorage.removeItem("username")
-})
+ 
   return (
     <div>
       <Header></Header>

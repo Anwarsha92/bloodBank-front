@@ -470,7 +470,10 @@ function Home() {
     
 
     useEffect(() => {
-        localStorage.removeItem("username")
+        if(localStorage.getItem("username")){
+            location(-1)
+        }
+        // localStorage.removeItem("username")
     })
 
 

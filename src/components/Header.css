@@ -93,3 +93,7 @@ transform: scale(.9);
 input:invalid[focus = 'true'] ~.loginputs {
   display: inline-block;
 }
+
+.profilebutton:active{
+border: none;
+}

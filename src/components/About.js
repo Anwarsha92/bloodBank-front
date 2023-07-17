@@ -4,9 +4,7 @@ import Footer from './Footer'
 
 function About() {
 
-    useEffect(() => {
-        localStorage.removeItem("username")
-    })
+   
     return (
         <div>
 
