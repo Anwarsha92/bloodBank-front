@@ -14,8 +14,6 @@ function Header() {
 
   const [showContent, setShowContent] = useState(true);
 
-
-
   let location = useNavigate()
 
 
@@ -32,13 +30,6 @@ function Header() {
   const [focus, setFocus] = useState({
     errUsername: false,
     errPassword: false,
-    errName: false,
-    errPlace: false,
-    errEmail: false,
-    errMobilere: false,
-    errUsernamere: false,
-    errPasswordre: false,
-    errConPsw: false,
 
   })
 
