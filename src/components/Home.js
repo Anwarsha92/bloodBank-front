@@ -544,7 +544,7 @@ function Home() {
                         {/* REGISTER DONOR */}
 
                         <form onSubmit={(e) => registerDonor(e)} className='form2 mt-5' action="">
-                            <h3 className='text-center zoom-in-zoom-out '><strong>Register as a <span className='text-primary'>Donor</span></strong></h3>
+                            <h3 className='text-center'><strong>Register as a <span className='text-primary'>Donor</span></strong></h3>
                             <div className='redisterinp'>
                                 <label htmlFor="">Name</label>
                                 <input

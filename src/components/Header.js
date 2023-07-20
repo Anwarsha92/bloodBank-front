@@ -36,8 +36,8 @@ function Header() {
 
   // Login appi
 
-  const handleSubmit = async () => {
-    // e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
     const body = {
       username: linputs.username,
@@ -74,8 +74,7 @@ function Header() {
 
   // Login handlechange
 
-  const logOut=(e)=>{
-    // e.preventDefault()
+  const logOut=()=>{
     localStorage.removeItem("username")  
     location("/")
 
@@ -141,7 +140,7 @@ function Header() {
               {showContent ?(
                 <div >
 
-                  {/* <form onSubmit={(e) => handleSubmit(e)} > */}
+                  <form onSubmit={(e) => handleSubmit(e)} >
                     <div className='loginheader'>
 
                       <div>
@@ -179,13 +178,13 @@ function Header() {
                         <span className='loginputs'>Password must have minimum 6 charactors</span>
                       </div>
                       <div className='text-center'>
-                        <button onClick={()=>(handleSubmit())} style={{ width: '100px' }} className='edit button-62'>Login</button>
+                        <button style={{ width: '100px' }} className='edit button-62'>Login</button>
                         {/* <a style={{ color: 'black',fontSize:'x-small' }} href="admin">Login as admin</a> */}
                       </div>
                     </div>
-                  {/* </form> */}
+                  </form>
 
-                </div>):<button onClick={(e) => logOut(e)} className='edit button-62'>Logout</button>}
+                </div>):<button onClick={(e) => logOut()} className='edit button-62'>Logout</button>}
             </Navbar.Collapse>
           </Container>
         </Navbar>
